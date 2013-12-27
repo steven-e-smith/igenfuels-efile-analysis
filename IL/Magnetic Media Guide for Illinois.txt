@@ -1,0 +1,2219 @@
+     Illinois Department of Revenue
+Magnetic	Media	Filing Formats	for
+Motor	Fuel	Reporting
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Compact Disc
+
+
+
+
+
+
+
+
+
+
+
+
+3.5 Diskette
+
+
+
+
+
+
+
+
+
+
+Motor Fuel Compliance Review
+       & Licensing Section
+217 782-2291
+
+
+
+Table of Contents
+
+
+FORMAT SPECIFICATIONS FOR PC DISK OR DISKETTE FILING
+Instructions for Showing Blended Fuel on Receipt Schedules	4
+Diskette and Compact Disc (CD) Filing Specifications for Motor Fuel Schedules	5
+Example of Transmittal	6
+Data Records Explanation	6
+Gen. Infor. , Record Layouts and Sch. , Data Fields, Gallon Fields, and Contact Information	7
+Each schedule with its respective layout	8
+Total records (Schedule, License, and File)	54
+
+Instructions for Showing Blended Fuel on Receipt Schedules
+To show blending you need 2 records. The first is to subtract the fuel, and the second is to add the blended fuel back in. The receipt schedules are “A”, “SA”, “LA” and “DA”.
+
+Enter all of the information exactly as you would normally, with the following exceptions:
+
+1 Filing Indicator, position 26:
+Record 1 - Use an “N” to indicated Negative Data to take the fuel out.
+Record 2 - Use an “O” to indicate Original Data to add the blended fuel back in.
+
+2 Net Gallons, positions 178 - 187:
+Record 1 - Enter gallons to be subtracted. Record 2 - Enter gallons to be added.
+(Use a POSITIVE number in both cases, the Filing Indicator will tell our system whether it should be subtracted or added.)
+
+3 Seller’s License Number, positions 94 - 113:
+Both records - Use your own License number. Do not leave the field blank or zero fill.
+
+4 Seller’s Name, positions 74 - 93:
+Record 1 - Enter “XFER TO SCHED M” Record 2 - Enter “XFER FR SCHED M”
+
+5 Invoice Date, positions 114 - 119:
+BOL Date, positions 132 - 137:
+Both records - Enter the date of transfer in both fields.
+
+
+6 Tax Type, position 188:
+Both records - Enter a “3” into both fields.
+
+7 Receipt Type, position 199:
+Both records - Enter a “1” into both fields.
+
+8 Invoice Number, positions 120 - 131:
+BOL Number, positions 138 - 147:
+Origin, positions 212 - 226:
+Destination, Positions 227 - 241:
+Carrier Name, positions 242 - 256:
+Both records - You can enter anything you want in these fields except all spaces or all zeroes.
+
+Note: Gallons with Filing Indicator of “N” should be subtracted when accumulating gallons for Schedule total (record “S”), Vendor total (record “V”), and File total (record “Z”).
+
+Diskette and Compact Disc (CD) Filing Specifications For Motor Fuel Schedules
+1 Diskettes used shall be 3.5 HD, or 3.5 and compact disc (in Joliet format).
+
+2 Diskette and CD's will not be returned.
+
+3 External label shall be created per IDOR label format on Page 6, and placed directly on the diskette/CD.
+
+4 Data records shall be created per IDOR record layouts described on Pages 8 through 52.
+
+5 IDOR permits only one liability period per diskette/CD file.
+
+6 All diskettes must contain fixed length records of the length specified on the record layouts. Each record must be terminated by an additional two (2) bytes ASCII record terminator of a Carriage Return and Line Feed (CRLF).
+
+7 Recording mode must be IBM standard ASCII.
+
+8 All schedules must be entered in filer license number, schedule type order, record type, and purchaser or seller license number order within the schedule type.
+
+9 All motor fuel schedules, except for schedules "F" and "J" must be filed on diskette.
+
+10 Only supporting schedules for the original return must be filed on diskette or CD. All amended schedule information must be filed on paper.
+
+11 Standard Point Location Codes (SPLC) and Standard Carrier Alpha Codes (SCAC) published by The National Motor Freight Traffic Association will NOT be utilized.
+
+12 Filer's paper schedules must accompany the return for at least two months following magnetic filing approval, unless otherwise notified by IDOR. If no notification is received, paper schedule submission may cease after two liability periods.
+
+13 A transmittal sheet must accompany each file showing filer's name and license number, liability period, creation date, and total transactions on the diskette(s), do not save the transmittal to the diskette.
+
+14 Records or blocks of data may not span diskettes.
+
+15 Use of compression utility PKZIPR is encouraged.
+
+16 The filing agent is required to have an updated Form IL-2848, Power of Attorney, for all clients filing through the diskette process.
+
+17 The filing agent must sign all transmittal forms as "Agent for Taxpayers" included on the diskette file being submitted.
+
+18 IDOR reserves the right to revoke a Motor Fuel License due to non-compliance with requirements or specifications.
+
+19  The filing agent must adhere to all IDOR diskette requirements and specifications.
+
+20 Do not submit returns and/or remittance with your magnetic media. Continue to send returns to the address indicated on the return form.
+
+21 Please send diskette(s) and accompanying documents to:
+
+MOTOR FUEL COMPLIANCE REVIEW AND LICENSING SECTION ILLINOIS DEPARTMENT OF REVENUE
+PO BOX 19477
+SPRINGFIELD IL 62794-9477
+
+Example of Transmittal Which Will Need to Accompany Each File
+Illinois Motor Fuel Schedules Diskette Transmittal
+Filing Agent Name: 	XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Filing Agent Address: 	XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Filing Agent City, State, Zip:	XXXXXXXXXXXXXXXXXXXX XX  XXXXX Filing Agent Phone:	(999)  999-9999
+Liability Period:		99/99 Creation Date:	99/99/99
+Filer’s Name: 	XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Filer’s License: X - 99999
+Number of	MUST
+License	Schedule	Transactions	APPEAR
+09999	A	99,999	FOR
+C	999	EACH
+.	.	FILER
+.	.
+.	.
+‘S’	5
+‘V’	1
+19999	LA	999
+.	.
+.	.
+.	.
+‘S’	4
+‘V’	1
+
+
+‘Z’	1
+
+Total Records	999,999
+Reminder: Please put the following information on your external label on the diskette(s) Your license number
+Your company name Liability period Creation date
+Sequence number, if more than one diskette (example: 1 of 2, 2 of 2, etc.)
+Note: Distributor/Supplier and Receiver license numbers are two separate filer license numbers.
+Data Records Explanation
+1  The following explains the types of data records that are to be used when filing on diskette. Each record is a fixed length record of 256 bytes.
+A Detail record - Schedule entry line items. Four different types may be submitted by setting the filing indicator in the record.
+1 Original Entry	-   All initial entries filed with the return.
+2 Reversal Entry	-   An exact copy of the Original Entry that needs to be corrected.
+3 Correction Entry	-   Replaces an entry that was submitted in error.
+Note:	A Reversal Entry must be submitted that corresponds to this Correction Entry
+4 Negative Entry  -   Negates or reduces the balance of an Original Entry, using a different Invoice Number. Used when original Invoice Number is not available, however the BOL# should remain the same as originally reported.
+B Schedule Total Record -   Accumulated totals for schedule entries of each schedule. Required at the end of Schedule Entry Records for each schedule written to the file.
+C License Total Record	-  Summary total of all entries from all schedule total records for each licensed filer. Required at the end of the final schedule total records for each licensed filer.
+D File Total Record	-   Summary total of all entries from all schedules. Required as the last record on the diskette file.
+
+General Information
+
+1 All numeric fields are in unpacked format, preceded with zeroes, right justified and zero-filled when not used.
+2 All alphanumeric fields are to be left justified and space-filled when not used.
+3 Not all fields in the data records are required. Refer to the record layouts and schedules to determine which fields are required for the schedules you are submitting on the diskette file.
+4 Incompatible files or variances from these specifications shall not be accepted. Any file that cannot be read will be required to be replaced.
+
+Record Layouts and Schedules
+To ensure proper formatting of records, an example of each schedule has been included in this book with a record layout. The record layout for an entry record is the same for all schedules. However, each schedule requires varying information. Thus, each schedule is listed with its report layout requirements.
+The record layouts have a column titled "FLD" that numbers each field in the record. The example schedules have circled numbers that correspond to these field numbers.
+If the field number does not have a corresponding number on the schedule, enter whatever is shown in the "Remarks" column of the record layout.
+
+Date Fields
+The century must not be included for reporting periods and invoice dates on the magnetic media records.
+
+Gallon Fields
+The invoice gallon field for 'E' records is 10 bytes long. This includes a one digit decimal position. The decimal point
+is implied and should not be entered. Gallons should be rounded to the nearest whole gallon. The field should be right justified and left zero filled with a zero in the one digit decimal position.
+Example:	25,963.6 gallons would be rounded and entered as 0000259640. 25,963.2 gallons would be rounded and entered as 0000259630.
+The total invoice gallon field on record types 'S', 'V', and 'Z' is 15 bytes long with a one digit decimal position. The decimal point is implied and should not be entered. The field should be right justified and left zero filled with a zero in the one digit decimal position.
+Example:	245,693.0 gallons would be entered as 000000002456930.
+
+For Schedule MG and MS each whole gallon of the primary and blending agent must add together to exactly equal the end product.
+To accumulate the total record gallons:
+• 'S' record gallons are accumulated by adding all 'E' record gallons for the specified schedule with a filing indicator of 'O' or 'C'. Gallons with a filing indicator 'R' and 'N' should be subtracted from the total.
+• Gallons for record 'V' should be the accumulated gallons for all 'S' records for the specified license number.
+• Gallons for record 'Z' should be the accumulated gallons for all 'V' records.
+
+Contact Information
+Call us at:	1 800 732-8866 or 217 782-2291
+Call our TDD at:	1 800 544-5304
+(telecommunications device for the deaf)
+Write us at:	MOTOR FUEL COMPLIANCE REVIEW AND LICENSING SECTION ILLINOIS DEPARTMENT OF REVENUE
+P O BOX 19477 SPRINGFIELD IL  62794-9477
+For technical help:   217 785-6744
+(Diskettes)
+
+Illinois Department of Revenue	MFT, UST, and EIF
+Schedule A	Gasoline Products Produced, Acquired,
+          Attach to Form RMFT-5 or Form RMFT-5-US	Received, or Transported into Illinois
+Step 1:  Complete the following information
+
+
+Page  
+
+
+of  
+
+Gas & Oil Co.	8
+Company name
+D-04321	1
+
+Check the tax/fee type you are listing on this page.
+MFT-free only
+
+26 Check the receipt type that you are listing on this page.
+x Gasoline products received in Illinois
+
+Your license number	UST-/EIF-free only	Gasoline products imported into Illinois
+
+Reporting period 0  7/ 2 0 0  0
+Month	Year
+
+9	23
+
+X  Both MFT- and UST-/EIF-free	Gasoline products produced in your Illinois refinery
+
+Step 2:  Report your tax- and fee-free purchases
+1	2	3	4	5	6	7	8	9
+Invoice date	Invoice	Name of	Bill of lading or	Origin	Destination	Seller’s	Invoiced
+(month, day, year)	number	carrier	manifest number	Name of seller	(city and state)	(Illinois cities only)	license number	gallons
+
+1  _0 _7/1_ 7_/2_ 0_ 0_ 0_
+2  _ _1/_ 7_/_ _ _ _
+
+A1234	AB Trucking	B5678	Test Oil Co.	Chicago, IL	Springfield	D-02345	15,000
+18	31	20	15	29	30	16	22
+Motor Fuel Uniform Schedules
+Schedule “A” (ENTRY) Record
+
+Buffer: 256 FIXED LENGTH
+Field #	Position	Length	Type	Field Description	Remarks
+1	1 - 17	17	FILER LICENSE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+‘O’ -  Original data ‘C’ -  Correction data ‘R’ -  Reversal data ‘N’ -  Negative data
+727 - 271NFILER PETRODEX INDICATORNot used by IDOR. Zero fill.828 - 4720A/NFILER NAMEComplete name of the filer. Space fill after complete name.948 - 514N NLIABILITY DATE
+48 - 49 Year
+
+50 - 51 MonthEnter valid date.
+Enter last 2 digits only.
+Example: Enter Year 2000 as ‘00’.
+01 - 12.1052 - 565AFILLERSpace fill.1157 - 604ACARRIER CODENot used. Space fill.1261 - 666NORIGIN CODENot used. Zero fill.1367 - 726NDESTINATION CODENot used. Zero fill.1473 - 731NSELLER PETRODEX INDICATORNot used by IDOR. Zero fill.1574 - 9320A/NSELLER NAMEName of the seller.
+Space fill after complete name.
+Schedule “A” (ENTRY) Record (continued)
+Buffer: 256 FIXED LENGTH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+‘1’ - Illinois receipts ‘2’ - Imported
+‘3’ - Produced
+27200 - 21011AFILLERSpace fill.28211 - 2111AMEDIA CODEEnter ‘D’ for diskette.29212 - 22615AORIGIN NAME
+212 - 224 City
+225 - 226 StateEnter origin name. Space fill after complete name.30227 - 24115ADESTINATION NAME
+227 - 239 City
+240 - 241 StateEnter destination name. Space fill after complete name.31242 - 25615ACARRIER NAMEEnter carrier name. Space fill after complete name.* PRODUCT CODE
+------------------------------ GAS - GASOLINE
+
+Illinois Department of Revenue
+Motor Fuel Tax
+Gasoline Products Sold to the Federal Government, Authorized Foreign Diplomats,
+
+
+Page	of  	
+
+Municipal Corporations Owning and Operating Local Transportation Systems, to Certain
+          Attach to Form RMFT-5	Privately Owned Public Utilities, Non-Recreational Type Watercraft, or for Aviation Purposes
+Step 1: Complete the following information
+8
+Gas & Oil Co.
+Company name
+D-04321	1
+Your license number
+Reporting period 0 7 / 2 0 0 0	9
+Month	Year
+Step 2: Report your nontaxable sales to the federal government, authorized foreign diplomats, etc.
+12345678Invoice dateInvoice orName ofBill of lading orOriginDestinationInvoiced(month, day, year)serial numbercarriermanifest numberName of purchaser(Illinois cities only)(Illinois cities only)gallons1   0_7_1/_8_/2_ 0_0_0_C15643XZ TransportA19565Test Oil Co.MolineRock Island9,5002    _ _/_1_7/_ _ _ _18302015282922Motor Fuel Uniform Schedules
+Schedule “B” (ENTRY) Record
+Buffer: 256 FIXED LENGTH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+‘O’ -  Original data ‘C’ -  Correction data ‘R’ -  Reversal data ‘N’ -  Negative data
+727 - 271NFILER PETRODEX INDICATORNot used by IDOR. Zero fill.828 - 4720A/NFILER NAMEComplete name of the filer. Space fill after complete name.948 - 514N NLIABILITY DATE
+48 - 49 Year
+
+50 - 51 MonthEnter valid date.
+Enter last 2 digits only.
+Example: Enter Year 2000 as ‘00’.
+01 - 12.1052 - 565AFILLERSpace fill.1157 - 604ACARRIER CODENot used. Space fill.1261 - 666NORIGIN CODENot used. Zero fill.1367 - 726NDESTINATION CODENot used. Zero fill.1473 - 731NPURCHASER  PETRODEX INDICATORNot used by IDOR. Zero fill.1574 - 9320A/NPURCHASER NAMEName of the purchaser.
+Space fill after complete name.
+Schedule “B” (ENTRY) Record (continued)
+Buffer: 256 FIXED LENGTH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* PRODUCT CODE
+ ------------------------------ GAS - GASOLINE
+
+Schedule C	Sales and Transfers of Gasoline Products
+          Attach to Form RMFT-5 or Form RMFT-5-US	Delivered to Points Outside of Illinois
+Step 1: Complete the following information
+8
+Gas & Oil Co.
+Company name
+D-04321	1
+Your license number
+MO	27
+Name of state into which shipments were made
+Reporting period 0  7 /2 0  0 0	9
+Month	Year
+Step  2: Report your exported gallons
+1	2	3	4	5	6	7	8
+Invoice date	Invoice	Name of	Bill of lading or	Origin	Destination	Invoiced
+(month, day, year)	number	carrier	manifest number	Name of purchaser	(Illinois cities only)	(city and state)	gallons
+
+1  _0_7/2_ 0_/_2_0_00_
+
+169877	ABC Trucking	B165544	Test Oil Co.	Springfield  St. Louis, MO	8,800
+
+17	18	31	20	15	29	30	22
+Motor Fuel Uniform Schedules
+Schedule “C” (ENTRY) Record
+Buffer: 256 FIXED LENGTH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+‘O’ -  Original data ‘C’ -  Correction data ‘R’ -  Reversal data ‘N’ -  Negative data
+727 - 271NFILER PETRODEX INDICATORNot used by IDOR. Zero fill.828 - 4720A/NFILER NAMEComplete name of the filer. Space fill after complete name.
+1694 - 11320
+
+N N N APURCHASER LICENSE NUMBER
+94  -   95	Type
+96  - 100	Sequence #
+101 Code
+102 - 113	Filler
+
+Zero fill. Zero fill. Zero fill. Space fill.17114 - 1196N NINVOICE DATE
+114 - 115 Year
+
+116 - 117 MonthEnter a valid date. Enter last 2 digits only.
+Example: Enter year 2000 as ‘00’.
+01 - 12.N118 - 119 Day01 - 31.18120 - 13112A/NINVOICE NUMBEREnter an invoice number. Required field. No leading zeroes. Space fill at end.19132 - 1376
+
+NBILL OF LADING DATE
+132 - 133 YearEnter a valid date.N134 - 135 Month01 - 12.N136 - 137 Day01 - 31.20138 - 14710A/NBILL OF LADINGEnter bill of lading or manifest number. No leading zeroes. Space fill at end.21148 - 17730NFILLERNot used by IDOR. Zero fill.22178 - 18710NNET GALLONSInvoiced gallons. Format 9 (9) V9. See instructions on Page 7.23188 - 1881NFILLERZero fill.24189 - 1891ASTORAGE PERMIT INDICATORSpace fill.25190 - 1989APRODUCT CODEEnter 3 character product code.	* If not contained within code table, enter product name.26199 - 20810AFILLERSpace fill.27209 - 2102AEXPORT STATEEnter valid postal abbreviation for the export state.28211-2111AMEDIA CODEEnter ‘D’ for diskette.29212 - 22615AORIGIN NAME
+212 - 224 City
+225 - 226 StateEnter origin name. Space fill after complete name.30227 - 24115ADESTINATION NAME
+227 - 239 City
+240 - 241 StateEnter destination name. Space fill after complete  name.31242 - 25615ACARRIER NAMEEnter carrier name. Space fill after complete name.
+* PRODUCT CODE
+------------------------------ GAS - GASOLINE
+
+
+Schedule D	Gasoline Products Sold and Distributed Tax- and Fee-Free
+          Attach to Form RMFT-5 or Form RMFT-5-US	in Illinois to Licensed Distributors and Receivers
+Step 1:  Complete the following information
+8
+
+Test Oil Co.
+Company name
+D-02345	1
+
+Check the tax/fee type you are listing on this page.
+23 x MFT-free only
+
+Your license number	UST-/EIF-free only
+
+Reporting period 0 7 /2 0 0 0	9
+Month	Year
+
+Both MFT- and UST-/EIF-free
+
+Step 2:  Report your tax- and fee-free sales
+1	2	3	4	5	6	7	8	9
+Invoice date	Invoice	Name of	Bill of lading or	Origin	Destination	Purchaser’s	Invoiced
+(month, day, year)	number	carrier	manifest number	Name of purchaser	(Illinois cities only)	(Illinois cities only)	license number	gallons
+1  0_ 7_/_1_7/_2_0_0_0   A1234   XT Transport	B5678	Gas & Oil Co.	Joliet	Lincoln	D-04321	15,000
+17	18	30	20	15	28	29	16	22
+Motor Fuel Uniform Schedules
+Schedule “D” (ENTRY) Record
+Buffer: 256 FIXED LENGTH
+Field #	Position	Length	Type	Field Description	Remarks
+1	1 - 17	17	FILER LICENSE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+‘O’ -  Original data ‘C’ -  Correction data ‘R’ -  Reversal data ‘N’ -  Negative data
+727 - 271NFILER PETRODEX INDICATORNot used by IDOR. Zero fill.828 - 4720A/NFILER NAMEComplete name of the filer. Space fill after complete name.
+Schedule “D” (ENTRY) Record (continued)
+Buffer: 256 FIXED LENGTH
+Field #	Position	Length	Type	Field Description	Remarks
+1694 - 11320
+
+NPURCHASER LICENSE NUMBER
+94   -   95	Type
+
+Enter purchaser license type:
+
+N N
+
+
+
+96   - 100	Sequence #
+
+101	Code‘01’ - for distributor ‘08’ - for receiver
+(If ‘08’, must be same as field 01) Purchaser license number. (Leading zeroes, if 4 digit license number.)
+Zero fill.A102 - 113	FillerSpace fill.17114 - 1196N NINVOICE DATE
+114 - 115 Year
+
+116 - 117 MonthEnter a valid date. Enter last 2 digits only.
+Example: Enter year 2000 as ‘00’.
+01 - 12.N118 - 119 Day01 - 31.18120 - 13112A/NINVOICE NUMBEREnter an invoice number. Required field. No leading zeroes. Space fill at end.19132 - 1376
+
+NBILL OF LADING DATE
+132 - 133 YearEnter a valid date.N134 - 135 Month01 - 12.N136 - 137 Day01 - 31.20138 - 14710A/NBILL OF LADINGEnter bill of lading or manifest number. No leading zeroes. Space fill at end.21148 - 17730NFILLERNot used by IDOR. Zero fill.22178 - 18710NNET GALLONSInvoiced gallons. Format 9 (9) V9. See instructions on Page 7.23188 - 1881NTAX TYPEEnter tax type.
+1 - MFT-Free only
+2 - UST-/EIF-Free only
+3 - Both MFT- and UST-/EIF-Free24189 - 1891ASTORAGE PERMIT INDICATORSpace fill.25190 - 1989APRODUCT CODEEnter 3 character product code.	*
+If not contained within code table, enter product name.26199 - 21012AFILLERSpace fill.27211-2111AMEDIA CODEEnter ‘D’ for diskette.28212 - 22615AORIGIN NAME
+212 - 224 City
+225 - 226 StateEnter origin name. Space fill after complete name.29227 - 24115ADESTINATION NAME
+227 - 239 City
+240 - 241 StateEnter destination name. Space fill after complete  name.30242 - 25615ACARRIER NAMEEnter carrier name. Space fill after complete name.
+* PRODUCT CODE
+------------------------------ GAS - GASOLINE
+
+25
+Gas & Oil Co.	8
+D-04321	1	x
+07 2 0 0 0
+0720 2000  B1234	AZ Trucking	L98765	Test Oil Co.	Chicago	Peoria	D-02045	4,000
+17	18	30	20	15	28	29	16	22
+Motor Fuel Uniform Schedules
+Schedule “E” (ENTRY) Record
+Buffer: 256 FIXED LENGTH
+Field #	Position	Length	Type	Field Description	Remarks
+1	1 - 17	17	FILER LICENSE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+‘O’ -  Original data ‘C’ -  Correction data ‘R’ -  Reversal data ‘N’ -  Negative data
+727 - 271NFILER PETRODEX INDICATORNot used by IDOR. Zero fill.828 - 4720A/NFILER NAMEComplete name of the filer. Space fill after complete name.948 - 514N NLIABILITY DATE
+48 - 49 Year
+
+50 - 51 MonthEnter valid date.
+Enter last 2 digits only.
+Example: Enter Year 2000 as ‘00’.
+01 - 12.1052 - 565AFILLERSpace fill.1157 - 604ACARRIER CODENot used. Space fill.1261 - 666NORIGIN CODENot used. Zero fill.1367 - 726NDESTINATION CODENot used. Zero fill.1473 - 731NSELLER PETRODEX INDICATORNot used by IDOR. Zero fill.1574 - 9320A/NSELLER NAMEName of the seller.
+Space fill after complete name.
+Schedule “E” (ENTRY) Record (continued)
+Buffer: 256 FIXED LENGTH
+Field #	Position	Length	Type	Field Description	Remarks
+1694 - 11320SELLER LICENSE NUMBERN94   -   95TypeEnter seller license type: ‘01’ - for distributor‘08’ - for receiverN N
+96   - 100	Sequence #
+
+101	Code(If ‘08’, must be same as field 01)
+Seller license number. (Leading zeroes, if 4 digit license number.)
+Zero fill.A102 - 113	FillerSpace fill.17114 - 1196N NINVOICE DATE
+114 - 115 Year
+
+116 - 117 MonthEnter a valid date. Enter last 2 digits only.
+Example: Enter year 2000 as ‘00’.
+01 - 12.N118 - 119 Day01 - 31.18120 - 13112A/NINVOICE NUMBEREnter an invoice number. Required field. No leading zeroes. Space fill at end.19132 - 1376
+
+NBILL OF LADING DATE
+132 - 133 YearEnter a valid date.N134 - 135 Month01 - 12.N136 - 137 Day01 - 31.20138 - 14710A/NBILL OF LADINGEnter bill of lading or manifest number. No leading zeroes. Space fill at end.21148 - 17730NFILLERNot used by IDOR. Zero fill.22178 - 18710NNET GALLONSInvoiced gallons. Format 9 (9) V9. See instructions on Page 7.23188 - 1881NTAX TYPEEnter tax type.
+1 - MFT-Paid only
+2 - UST-/EIF-Paid only
+3 - Both MFT- and UST-/EIF-Paid24189 - 1891AFILLERSpace fill.25190 - 1989APRODUCT CODEEnter 3 character product code.	*
+If not contained within code table, enter product name.26199 - 21012AFILLERSpace fill.27211-2111AMEDIA CODEEnter ‘D’ for diskette.28212 - 22615AORIGIN NAME
+212 - 224 City
+225 - 226 StateEnter origin name. Space fill after complete name.29227 - 24115ADESTINATION NAME
+227 - 239 City
+240 - 241 StateEnter destination name. Space fill after complete  name.30242 - 25615ACARRIER NAMEEnter carrier name. Space fill after complete name.* PRODUCT CODE
+------------------------------ GAS   -   GASOLINE ALC   -   ALCOHOL
+CNG  -   COMBUSTIBLE GASES
+
+
+
+Motor Fuel Uniform Schedules
+Schedule “M” - Gasoline (ENTRY) Record
+Buffer: 256 FIXED LENGTH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+‘O’ -  Original data ‘C’ -  Correction data ‘R’ -  Reversal data ‘N’ -  Negative data
+727 - 271NFILLERNot used by IDOR. Zero fill.828 - 4720A/NFILER NAMEComplete name of the filer. Space fill after complete name.948 - 514N NLIABILITY DATE
+48 - 49 Year
+
+50 - 51 MonthEnter valid date.
+Enter last 2 digits only.
+Example: Enter Year 2000 as ‘00’.
+01 - 12.1052 - 565AFILLERSpace fill.1157 - 604ACARRIER CODENot used. Space fill.1261 - 666NORIGIN CODENot used. Zero fill.1367 - 726NDESTINATION CODENot used. Zero fill.1473-731NFILLERNot used by IDOR. Zero fill.1574-9320A/NPURCHASER NAMESpace fill.
+Schedule “M” - Gasoline (ENTRY) Record (continued)
+Buffer: 256 FIXED LENGTH
+Field #
+16Position
+94 - 113Length
+20TypeField Description
+PURCHASER LICENSE NUMBERRemarksN N N A94   -   95	Type
+96   - 100	Sequence #
+101 Code
+102 - 113	FillerZero fill. Zero fill. Zero fill. Space fill.17114 - 1196NINVOICE DATEZero fill.18120 - 13112AINVOICE NUMBERSpace fill.19132 - 1376
+NBLENDING DATE
+132 - 133 YearEnter a valid date. Enter last 2 digits only.N134 - 135 Month01 - 12.N136 - 137 Day01 - 31.20138 - 1469AEND PRODUCT CODEEnter 3 character product code. ***
+If not contained within code table, enter product name.21147 - 1471AFILLERSpace fill.22148 - 17730NFILLERNot used by IDOR. Zero fill.23178 - 18710NEND PRODUCT GALLONSTotal end product gallons. Format 9(9)V9.24188 - 1881NFILLERZero fill.25189 - 1891AFILLERSpace fill.26190 - 1989APRIMARY PRODUCT CODEEnter 3 character product code. ***
+If not contained within code table, enter product name.27199 - 1991AFILLERSpace fill.28200 - 20910NPRIMARY PRODUCT GALLONSPrimary product gallons. Format 9(9)V929210 - 2101AFILLERSpace fill.30211 - 2111AMEDIA CODEEnter ‘D’ for diskette or CD.31212 - 22110NBLENDING AGENT GALLONS
+Column aBlending gasoline gallons Column a. Format 9(9)V9.32222 - 23110NBLENDING AGENT GALLONS
+Column bBlending ethanol/alcohol gallons Column b. Formal 9(9)V9.33232 - 2409ABLENDING AGENT NAME
+Column cEnter actual product name.
+If different from gasoline or ethanol/alcohol.34241 - 25010NBLENDING AGENT OTHER
+Gallons Column cBlending other gallons Column c. Format 9(9)V9.35251 - 2566AFILLERSpace fill.
+* PRODUCT CODE
+------------------------------ GAS   -   GASOLINE
+ETH   -   ETHANOL/ALCOHOL GHL   -   GASOHOL
+
+
+Motor Fuel Uniform Schedules
+Schedule “M” - Special Fuels (ENTRY) Record
+Buffer: 256 FIXED LENGTH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+‘O’ -  Original data ‘C’ -  Correction data ‘R’ -  Reversal data ‘N’ -  Negative data
+727 - 271NFILLERNot used by IDOR. Zero fill.828 - 4720A/NFILER NAMEComplete name of the filer. Space fill after complete name.948 - 514N NLIABILITY DATE
+48 - 49 Year
+
+50 - 51 MonthEnter valid date.
+Enter last 2 digits only.
+Example: Enter Year 2000 as ‘00’.
+01 - 12.1052 - 565AFILLERSpace fill.1157 - 604ACARRIER CODENot used. Space fill.1261 - 666NORIGIN CODENot used. Zero fill.1367 - 726NDESTINATION CODENot used. Zero fill.1473 - 731NFILLERNot used by IDOR. Zero fill.1574 - 9320A/NPURCHASER NAMESpace fill.
+Schedule “M” - Special Fuels (ENTRY) Record (continued)
+Buffer: 256 FIXED LENGTH
+Field #
+16Position
+94 - 113Length
+20TypeField Description
+PURCHASER LICENSE NUMBERRemarksN N N A94   -   95	Type
+96   - 100	Sequence #
+101 Code
+102 - 113	FillerZero fill. Zero fill. Zero fill. Space fill.17114 - 1196NINVOICE DATEZero fill.18120 - 13112AINVOICE NUMBERSpace fill.19132 - 1376N NBLENDING DATE
+132 - 133 Year
+
+134 - 135 MonthEnter a valid date. Enter last 2 digits only.
+Example: Enter year 2000 as ‘00’.
+01 - 12.N136 - 137 Day01 - 31.20138 - 1469AEND PRODUCT CODEEnter 3 character product code. ***
+If not contained within code table, enter product name.21147 - 1471AFILLERSpace fill.22148 - 17730NFILLERNot used by IDOR. Zero fill.23178 - 18710NEND PRODUCT GALLONSTotal end product gallons. Format 9(9)V9.24188 - 1881NFILLERZero fill.25189 - 1891AFILLERSpace fill.26190 - 1989APRIMARY PRODUCT CODEEnter 3 character product code. ***
+If not contained within code table, enter product name.27199 - 1991AFILLERSpace fill.28200 - 20910NPRIMARY PRODUCT GALLONSPrimary product gallons. Format 9(9)V929210 - 2101AFILLERSpace fill.30211 - 2111AMEDIA CODEEnter ‘D’ for diskette or CD.31212 - 22110NBLENDING AGENT GALLONS
+Column aBlending soy gallons Column a. Format 9(9)V9.32222 - 23110NBLENDING AGENT GALLONS
+Column bBlending 1K gallons Column b. Formal 9(9)V9.33232 - 2409ABLENDING AGENT NAME
+Column cEnter actual product name. If different from soy or 1K.34241 - 25010NBLENDING AGENT OTHER
+Gallons Column cBlending other gallons Column c. Format 9(9)V9.35251 - 2566AFILLERSpace fill.
+* PRODUCT CODE
+------------------------------ SPF   -   UNDYED DIESEL DYE   -   DYED DIESEL
+SOY   -   SOY OIL/BI00/B99.9 1K	-   1-K KEROSENE
+BIO	-   BIO DIESEL/PETRO BLEND
+
+1	25
+9
+
+
+
+
+
+17	18	30	20	15	28	29	16	22
+
+Motor Fuel Uniform Schedules
+Schedule “GA-1” (ENTRY) Record
+Buffer: 256 FIXED LENGTH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+‘O’ -  Original data ‘C’ -  Correction data ‘R’ -  Reversal data ‘N’ -  Negative data
+727 - 271NFILER PETRODEX INDICATORNot used by IDOR. Zero fill.828 - 4720A/NFILER NAMEComplete name of the filer. Space fill after complete name.948 - 514N NLIABILITY DATE
+48 - 49 Year
+
+50 - 51 MonthEnter valid date.
+Enter last 2 digits only.
+Example: Enter Year 2000 as ‘00’.
+01 - 12.1052 - 565AFILLERSpace fill.1157 - 604ACARRIER CODENot used. Space fill.1261 - 666NORIGIN CODENot used. Zero fill.1367 - 726NDESTINATION CODENot used. Zero fill.1473 - 731NPURCHASER  PETRODEX INDICATORNot used by IDOR. Zero fill.1574 - 9320A/NPURCHASER NAMEName of the purchaser.
+Space fill after complete name.
+Schedule “GA-1” (ENTRY) Record (continued)
+Buffer: 256 FIXED LENGTH
+Field #	Position	Length	Type	Field Description	Remarks
+1694 - 11320PURCHASER LICENSE NUMBERA/N94   -   95	TypeEnter purchaser license type:‘01’ - for distributor ‘02’ - for supplier ‘RO’- for retail outlet
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* PRODUCT CODE
+------------------------------
+LPG   -   LIQUID PROPANE GAS 1K	-   KEROSENE
+ALC   -   ALCOHOL
+
+1	25
+9
+23
+
+
+
+
+
+
+17	18	30	20	15	28
+
+29	16	22
+
+Motor Fuel Uniform Schedules
+Schedule “DA” (ENTRY) Record
+Buffer: 256 FIXED LENGTH
+Field #	Position	Length	Type	Field Description	Remarks
+1	1 - 17	17	FILER LICENSE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+‘O’ -  Original data ‘C’ -  Correction data ‘R’ -  Reversal data ‘N’ -  Negative data
+727 - 271NFILER PETRODEX INDICATORNot used by IDOR. Zero fill.828 - 4720A/NFILER NAMEComplete name of the filer.Space fill after complete name.948 - 514LIABILITY DATEEnter valid date.N48 - 49 YearEnter last 2 digits only.Example: Enter Year 2000 as ‘00’.N50 - 51 Month01 - 12.1052 - 565AFILLERSpace fill.1157 - 604ACARRIER CODENot used. Space fill.1261 - 666NORIGIN CODENot used. Zero fill.1367 - 726NDESTINATION CODENot used. Zero fill.1473 - 731NSELLER PETRODEX INDICATORNot used by IDOR. Zero fill.1574 - 9320A/NSELLER NAMEName of the seller. Space fill after complete name.
+Schedule “DA” (ENTRY) Record (continued)
+Buffer: 256 FIXED LENGTH
+Field #	Position	Length	Type	Field Description	Remarks
+1694 - 11320SELLER LICENSE NUMBERN94   -  95TypeEnter seller license type: ‘01’ - for distributor‘02’ - for supplier ‘08’ - for receiverN N
+96   - 100   Sequence #
+
+101	Code(If ‘08’, must be same as field 01)
+Seller license number. (Leading zeroes, if 4 digit license number.)
+Zero fill.A102 - 113   FillerSpace fill.17114 - 1196N NINVOICE DATE
+114 - 115 Year
+
+116 - 117 MonthEnter a valid date. Enter last 2 digits only.
+Example: Enter year 2000 as ‘00’.
+01 - 12.N118 - 119 Day01 - 31.18120 - 13112A/NINVOICE NUMBEREnter an invoice number. Required field. No leading zeroes. Space fill at end.19132 - 1376
+
+NBILL OF LADING DATE
+132 - 133 YearEnter a valid date.N134 - 135 Month01 - 12.N136 - 137 Day01 - 31.20138 - 14710A/NBILL OF LADINGEnter bill of lading or manifest number. No leading zeroes. Space fill at end.21148 - 17730NFILLERNot used by IDOR. Zero fill.22178 - 18710NNET GALLONSInvoiced gallons. Format 9 (9) V9. See instructions on Page 7.23188 - 1881NTAX TYPEEnter tax type.
+1 - MFT-Free only
+2 - UST-/EIF-Free only
+3 - Both MFT- and UST-/EIF-Free24189 - 19810AFILLERSpace fill.25199 - 1991A/NRECEIPT TYPEEnter schedule gallon type.‘1’ - Illinois receipts ‘2’ - Imported
+‘3’ - Produced
+26200 - 21011AFILLERSpace fill.27211 - 2111AMEDIA CODEEnter ‘D’ for diskette.28212 - 22615AORIGIN NAME
+212 - 224 City
+225 - 226 StateEnter origin name. Space fill after complete name.29227 - 24115ADESTINATION NAME
+227 - 239 City
+240 - 241 StateEnter destination name. Space fill after complete  name.30242 - 25615ACARRIER NAMEEnter carrier name. Space fill after complete name.
+
+
+Gas & Oil Co. 	8
+S-04321 	1
+9
+0 7  2	0  0  0
+
+
+
+
+
+0717 2000	12356Carrier Co.B9750ABX Mass TransitMorrisMonmouth	15,00017	18292015272822Motor Fuel Uniform Schedules
+Schedule “DB” (ENTRY) Record
+Buffer: 256 FIXED LENGTH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+‘O’ -  Original data ‘C’ -  Correction data ‘R’ -  Reversal data ‘N’ -  Negative data
+727 - 271NFILER PETRODEX INDICATORNot used by IDOR. Zero fill.828 - 4720A/NFILER NAMEComplete name of the filer. Space fill after complete name.948 - 514N NLIABILITY DATE
+48 - 49 Year
+
+50 - 51 MonthEnter valid date.
+Enter last 2 digits only.
+Example: Enter Year 2000 as ‘00’.
+01 - 12.1052 - 565AFILLERSpace fill.1157 - 604ACARRIER CODENot used. Space fill.1261 - 666NORIGIN CODENot used. Zero fill.1367 - 726NDESTINATION CODENot used. Zero fill.1473 - 731NPURCHASER  PETRODEX INDICATORNot used by IDOR. Zero fill.
+Schedule “DB” (ENTRY) Record (continued)
+Buffer: 256 FIXED LENGTH
+Field #
+15Position
+74 - 93Length
+20Type
+A/NField Description
+PURCHASER NAMERemarks
+Name of the purchaser. Space fill aftercomplete name.1694 - 11320
+
+NPURCHASER LICENSE NUMBER
+94   -   95	Type
+
+Zero fill.N N A96   - 100	Sequence #
+101 Code
+102 - 113	FillerZero fill. Zero fill. Space fill.17114 - 1196N NINVOICE DATE
+114 - 115 Year
+
+116 - 117 MonthEnter a valid date. Enter last 2 digits only.
+Example: Enter year 2000 as ‘00’.
+01 - 12.N118 - 119 Day01 - 31.18120 - 13112A/NINVOICE NUMBEREnter an invoice number. Required field. No leading zeroes. Space fill at end.19132 - 1376
+
+NBILL OF LADING DATE
+132 - 133 YearEnter a valid date.N134 - 135 Month01 - 12.N136 - 137 Day01 - 31.20138 - 14710A/NBILL OF LADINGEnter bill of lading or manifest number. No leading zeroes. Space fill at end.21148 - 17730NFILLERNot used by IDOR. Zero fill.22178 - 18710NNET GALLONSInvoiced gallons. Format 9 (9) V9. See instructions on Page 7.23188 - 1881NFILLERZero fill.24189 - 1891ASTORAGE PERMIT INDICATORSpace fill.25190 - 21021AFILLERSpace fill.26211 - 2111AMEDIA CODEEnter ‘D’ for diskette.27212 - 22615AORIGIN NAME
+212 - 224 City
+225 - 226 StateEnter origin name. Space fill after complete name.28227 - 24115ADESTINATION NAME
+227 - 239 City
+240 - 241 StateEnter destination name. Space fill after complete  name.29242 - 25615ACARRIER NAMEEnter carrier name. Space fill after complete name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Motor Fuel Uniform Schedules
+Schedule “DC” (ENTRY) Record
+Buffer: 256 FIXED LENGTH
+Field #	Position	Length	Type	Field Description	Remarks
+1	1 - 17	17	FILER LICENSE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+‘O’ -  Original data ‘C’ -  Correction data ‘R’ -  Reversal data ‘N’ -  Negative data
+727 - 271NFILER PETRODEX INDICATORNot used by IDOR. Zero fill.828 - 4720A/NFILER NAMEComplete name of the filer. Space fill after complete name.948 - 514N NLIABILITY DATE
+48 - 49 Year
+
+50 - 51 MonthEnter valid date.
+Enter last 2 digits only.
+Example: Enter Year 2000 as ‘00’.
+01 - 12.1052 - 565AFILLERSpace fill.1157 - 604ACARRIER CODENot used. Space fill.1261 - 666NORIGIN CODENot used. Zero fill.1367 - 726NDESTINATION CODENot used. Zero fill.1473 - 731NPURCHASER  PETRODEX INDICATORNot used by IDOR. Zero fill.
+1574 - 9320A/NPURCHASER NAMEName of the purchaser. Space fill after complete name.1694 - 11320
+
+NPURCHASER LICENSE NUMBER
+94   -   95	Type
+
+Zero fill.N N A96   - 100	Sequence #
+101 Code
+102 - 113	FillerZero fill. Zero fill. Space fill.17114 - 1196N NINVOICE DATE
+114 - 115 Year
+
+116 - 117 MonthEnter a valid date. Enter last 2 digits only.
+Example: Enter year 2000 as ‘00’.
+01 - 12.N118 - 119 Day01 - 31.18120 - 13112A/NINVOICE NUMBEREnter an invoice number. Required field. No leading zeroes. Space fill at end.19132 - 1376
+
+NBILL OF LADING DATE
+132 - 133 YearEnter a valid date.N134 - 135 Month01 - 12.N136 - 137 Day01 - 31.20138 - 14710A/NBILL OF LADINGEnter bill of lading or manifest number. No leading zeroes. Space fill at end.21148 - 17730NFILLERNot used by IDOR. Zero fill.22178 - 18710NNET GALLONSInvoiced gallons. Format 9 (9) V9. See instructions on Page 7.23188 - 1881NFILLERZero fill.24189 - 1891ASTORAGE PERMIT INDICATORSpace fill.25190 - 20819AFILLERSpace fill.26209-2102AEXPORT STATEEnter valid postal abbreviation for the export state.27211 - 2111AMEDIA CODEEnter ‘D’ for diskette.28212 - 22615AORIGIN NAME
+212 - 224 City
+225 - 226 StateEnter origin name. Space fill after complete name.29227 - 24115ADESTINATION NAME
+227 - 239 City
+240 - 241 StateEnter destination name. Space fill after complete name.30242 - 25615ACARRIER NAMEEnter carrier name. Space fill after complete name.
+23
+Test Oil Co.	8
+D-02345	1	x
+0 7 2 0 0 0	9
+
+
+
+
+0718 20003579AB CarrierK2468Gas & Oil Co.PeoriaMortonD-0432120,000171828201526271622Motor Fuel Uniform Schedules
+Schedule “DD” (ENTRY) Record
+Buffer: 256 FIXED LENGTH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+‘O’ -  Original data ‘C’ -  Correction data ‘R’ -  Reversal data ‘N’ -  Negative data
+727 - 271NFILER PETRODEX INDICATORNot used by IDOR. Zero fill.828 - 4720A/NFILER NAMEComplete name of the filer. Space fill after complete name.948 - 514N NLIABILITY DATE
+48 - 49 Year
+
+50 - 51 MonthEnter valid date.
+Enter last 2 digits only.
+Example: Enter Year 2000 as ‘00’.
+01 - 12.1052 - 565AFILLERSpace fill.1157 - 604ACARRIER CODENot used. Space fill.1261 - 666NORIGIN CODENot used. Zero fill.1367 - 726NDESTINATION CODENot used. Zero fill.1473 - 731NPURCHASER  PETRODEX INDICATORNot used by IDOR. Zero fill.1574 - 9320A/NPURCHASER NAMEName of the purchaser. Space fill after complete name.
+Schedule “DD” (ENTRY) Record (continued)
+Buffer: 256 FIXED LENGTH
+
+
+
+
+‘01’ - for distributor ‘02’ - for supplier ‘08’ - for receiver
+
+N
+
+N A
+96   -   100	Sequence #
+
+101 Code
+102 -   113	Filler(If ‘08’, must be same as Field 01) Purchaser license number. (Leading zeroes, if 4 digit license number.)
+Zero fill. Space fill.17114 - 1196N NINVOICE DATE
+114 - 115 Year
+
+116 - 117 MonthEnter a valid date. Enter last 2 digits only.
+Example: Enter year 2000 as ‘00’.
+01 - 12.N118 - 119 Day01 - 31.18120 - 13112A/NINVOICE NUMBEREnter an invoice number. Required field. No leading zeroes. Space fill at end.19132 - 1376
+
+NBILL OF LADING DATE
+132 - 133 YearEnter a valid date.N134 - 135 Month01 - 12.N136 - 137 Day01 - 31.20138 - 14710A/NBILL OF LADINGEnter bill of lading or manifest number. No leading zeroes. Space fill at end.21148 - 17730NFILLERNot used by IDOR. Zero fill.22178 - 18710NNET GALLONSInvoiced gallons. Format 9 (9) V9. See instructions on Page 7.23188 - 1881NTAX TYPEEnter tax type.
+1 - MFT-Free only
+2 - UST-/EIF-Free only
+3 - Both MFT- and UST-/EIF-Free24189 - 21022AFILLERSpace fill.25211 - 2111AMEDIA CODEEnter ‘D’ for diskette.26212 - 22615AORIGIN NAME
+212 - 224 City
+225 - 226 StateEnter origin name. Space fill after complete name.27227 - 24115ADESTINATION NAME
+227 - 239 City
+240 - 241 StateEnter destination name. Space fill ater complete name.28242 - 25615ACARRIER NAMEEnter carrier name. Space fill after complete name.
+D-04321 	1
+0 7 2 0 0 0	9
+
+25
+A - Agriculture  C - Construction   F - Refrigeration  H - Home heating   I - Industrial   L - Lawn	M - Marine	R - Railroad	O - Other (Identify)
+
+
+Good Food, Inc.1215 W. AdamsSpringfield, IL62701A2,000152829302422Motor Fuel Uniform Schedules
+Schedule “DD-1” (ENTRY) Record
+Buffer: 256 FIXED LENGTH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+‘O’ -  Original data ‘C’ -  Correction data ‘R’ -  Reversal data ‘N’ -  Negative data
+727 - 271NFILER PETRODEX INDICATORNot used by IDOR. Zero fill.828 - 4720A/NFILER NAMEComplete name of the filer. Space fill after complete name.948 - 514N NLIABILITY DATE
+48 - 49 Year
+
+50 - 51 MonthEnter valid date.
+Enter last 2 digits only.
+Example: Enter Year 2000 as ‘00’.
+01 - 12.1052 - 565AFILLERSpace fill.1157 - 604ACARRIER CODESpace fill.1261 - 666NORIGIN CODEZero fill.1367 - 726NDESTINATION CODEZero fill.1473 - 731NPURCHASER  PETRODEX INDICATORNot used by IDOR. Zero fill.1574 - 9320A/NPURCHASER NAMEName of the purchaser. Space fill after complete name.
+Schedule “DD-1” (ENTRY) Record (continued)
+Buffer: 256 FIXED LENGTH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+‘A’ -  Agriculture ‘C’ -  Construction ‘F’ -  Refrigeration ‘H’ -  Home heating ‘I’  -  Industrial
+‘L’  -  Lawn ‘M’ -  Marine ‘R’ -  Railroad ‘O’ -  Other
+25190 - 1989FUEL USAGE DESCRIPTIONIf fuel usage code is ‘O’, specify other fuel usage description.26199 - 21012AFILLERSpace fill.27211 - 2111AMEDIA CODEEnter ‘D’ for diskette.28212 - 22615APURCHASER STREET ADDRESSEnter street address of purchaser.29227 - 24115APURCHASER CITY & STATE
+227 - 239 City
+240 - 241 StateEnter city & state of purchaser. Enter city of purchaser.
+Enter state of purchaser.30242 - 25615
+
+NPURCHASER ZIP CODE
+242 - 246 Zip codeEnter zip code of purchaser. Enter 5 digit zip code.N247 - 250 Zip + 4 code
+251 - 256 FillerEnter 4 digit code if known, else zero fill. Space fill.
+
+R-14321	1	x
+0 7 2 0 0 0	9
+
+
+
+
+
+0717 2000	A1443	Shipping Co.  C19677	1-K	Test Oil Co.	Detroit, MI   Chicago	R-12345   11,000
+
+17	18	31	20	25
+
+15	29	30
+
+16	22
+
+Motor Fuel Uniform Schedules
+Schedule “LA” (ENTRY) Record
+Buffer: 256 FIXED LENGTH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+‘O’ -  Original data ‘C’ -  Correction data ‘R’ -  Reversal data ‘N’ -  Negative data
+727 - 271NFILER PETRODEX INDICATORNot used by IDOR. Zero fill.828 - 4720A/NFILER NAMEComplete name of the filer. Space fill after complete name.948 - 514N NLIABILITY DATE
+48 - 49 Year
+
+50 - 51 MonthEnter valid date.
+Enter last 2 digits only.
+Example: Enter Year 2000 as ‘00’.
+01 - 12.1052 - 565AFILLERSpace fill.1157 - 604ACARRIER CODENot used. Space fill.1261 - 666NORIGIN CODENot used. Zero fill.1367 - 726NDESTINATION CODENot used. Zero fill.1473 - 731NSELLER PETRODEX INDICATORNot used by IDOR. Zero fill.1574 - 9320A/NSELLER NAMEName of the seller. Space fill after complete name.
+Schedule “LA” (ENTRY) Record (continued)
+Buffer: 256 FIXED LENGTH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+‘1’ - Illinois receipts ‘2’ - Imported
+‘3’ - Produced
+27200 - 21011AFILLERSpace fill.28211 - 2111AMEDIA CODEEnter ‘D’ for diskette.29212 - 22615AORIGIN NAME
+212 - 224 City
+225 - 226 StateEnter origin name. Space fill after complete name.30227 - 24115ADESTINATION NAME
+227 - 239 City
+240 - 241 StateEnter destination name. Space fill after complete name.31242 - 25615ACARRIER NAMEEnter carrier name. Space fill after complete name.
+* PRODUCT CODE
+-----------------------------
+AVI  -  Aviation 1K   -  Kerosene
+
+25
+Test Oil Co. 	8
+x
+R-12345 	1
+0 7 2 0 0 0	9
+
+
+
+
+0701 2000	CA2435	ABC Trucking	BL14589	Deisel Co.	Quincy	8,000
+17	18	30	20	15	28	29	22
+Motor Fuel Uniform Schedules
+Schedule “LB” (ENTRY) Record
+Buffer: 256 FIXED LENGTH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+‘O’ -  Original data ‘C’ -  Correction data ‘R’ -  Reversal data ‘N’ -  Negative data
+727 - 271NFILER PETRODEX INDICATORNot used by IDOR. Zero fill.828 - 4720A/NFILER NAMEComplete name of the filer. Space fill after complete name.948 - 514N NLIABILITY DATE
+48 - 49 Year
+
+50 - 51 MonthEnter valid date.
+Enter last 2 digits only.
+Example: Enter Year 2000 as ‘00’.
+01 - 12.1052 - 565AFILLERSpace fill.1157 - 604ACARRIER CODENot used. Space fill.1261 - 666NORIGIN CODENot used. Zero fill.1367 - 726NDESTINATION CODENot used. Zero fill.1473 - 731NPURCHASER PETRODEX INDICATORNot used by IDOR. Zero fill.1574 - 9320A/NPURCHASER NAMEName of the purchaser. Space fill after complete name.
+Schedule “LB” (ENTRY) Record (continued)
+Buffer: 256 FIXED LENGTH
+Field #
+16Position
+94 - 113Length
+20TypeField Description
+PURCHASER LICENSE NUMBERRemarksN N N A94   -   95	Type
+96   - 100	Sequence #
+101 Code
+102 - 113	FillerZero fill. Zero fill. Zero fill. Space fill.17114 - 1196N NINVOICE DATE
+114 - 115 Year
+
+116 - 117 MonthEnter a valid date. Enter last 2 digits only.
+Example: enter year 2000 as ‘00’.
+01 - 12.N118 - 119 Day01 - 31.18120 - 13112A/NINVOICE NUMBEREnter an invoice number. Required field. No leading zeroes. Space fill at end.19132 - 1376
+NBILL OF LADING DATE
+132 - 133 YearEnter a valid date.N134 - 135 Month01 - 12.N136 - 137 Day01 - 31.20138 - 14710A/NBILL OF LADINGEnter bill of lading or manifest number. No leading zeroes. Space fill at end.21148 - 17730NFILLERNot used by IDOR. Zero fill.22178 - 18710NNET GALLONSInvoiced gallons. Format 9 (9) V9. See instructions on Page 7.23188 - 1881NFILLERZero fill.24189 - 1891ASTORAGE PERMIT INDICATORSpace fill.25190 - 1989APRODUCT CODEEnter 3 character product code.	*If not contained within code table, enterproduct name.26199 - 21012AFILLERSpace fill.27211 - 2111AMEDIA CODEEnter ‘D’ for diskette.28212 - 22615AAIRPORT NAMEEnter airport name if sold to air carrier.Space fill after carrier, or barge, space fill.29227 - 24115ADESTINATION NAMEEnter destination name. Space fill after227 - 239 Citycomplete name.240 - 241 State30242 - 25615ACARRIER NAMEEnter carrier name. Space fill after completename.* PRODUCT CODE
+-----------------------------
+DSL -  Diesel 1K   -  Kerosene KER -  Kerosene AVI  -  Aviation
+
+Test Oil Co.	8	25
+R-12345	1
+MO	27	x
+0 8 2 0 0 0	9
+
+
+
+
+0801 2000	89B24BDF TruckingBL4123Gas & Oil Co.Galesburg  St. Louis, MO4,55017	1831201529	3022Motor Fuel Uniform Schedules
+Schedule “LC” (ENTRY) Record
+Buffer: 256 FIXED LENGTH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+‘O’ -  Original data ‘C’ -  Correction data ‘R’ -  Reversal data ‘N’ -  Negative data
+727 - 271NFILER PETRODEX INDICATORNot used by IDOR. Zero fill.828 - 4720A/NFILER NAMEComplete name of the filer. Space fill after complete name.948 - 514N NLIABILITY DATE
+48 - 49 Year
+
+50 - 51 MonthEnter valid date.
+Enter last 2 digits only.
+Example: Enter Year 2000 as ‘00’.
+01 - 12.1052 - 565AFILLERSpace fill.1157 - 604ACARRIER CODENot used. Space fill.1261 - 666NORIGIN CODENot used. Zero fill.1367 - 726NDESTINATION CODENot used. Zero fill.1473 - 731NPURCHASER PETRODEX INDICATORNot used by IDOR. Zero fill.1574 - 9320A/NPURCHASER NAMEName of the purchaser. Space fill after complete name.
+1694 - 11320
+
+N N N APURCHASER LICENSE NUMBER
+94   -   95	Type
+96   - 100	Sequence #
+101 Code
+102 - 113	Filler
+
+Zero fill. Zero fill. Zero fill. Space fill.17114 - 1196N NINVOICE DATE
+114 - 115 Year
+
+116 - 117 MonthEnter a valid date. Enter last 2 digits only.
+Example: enter year 2000 as ‘00’.
+01 - 12.N118 - 119 Day01 - 31.18120 - 13112A/NINVOICE NUMBEREnter an invoice number. Required field. No leading zeroes. Space fill at end.19132 - 1376
+NBILL OF LADING DATE
+132 - 133 YearEnter a valid date.N134 - 135 Month01 - 12.N136 - 137 Day01 - 31.20138 - 14710A/NBILL OF LADINGEnter bill of lading or manifest number. No leading zeroes. Space fill at end.21148 - 17730NFILLERNot used by IDOR. Zero fill.22178 - 18710NNET GALLONSInvoiced gallons. Format 9 (9) V9. See instructions on Page 7.23188 - 1881NFILLERZero fill.24189 - 1891ASTORAGE PERMIT INDICATORSpace fill.25190 - 1989APRODUCT CODEEnter 3 character product code.	*If not contained within code table, enterproduct name.26199 - 20810AFILLERSpace fill.27209 - 2102AEXPORT STATEEnter valid postal abbreviation for the exportstate.28211 - 2111AMEDIA CODEEnter ‘D’ for diskette.29212 - 22615AORIGIN NAMEEnter origin name. Space fill after complete212 - 224 Cityname.225 - 226 State30227 - 24115ADESTINATION NAMEEnter destination name. Space fill after227 - 239 Citycomplete name.240 - 241 State31242 - 25615ACARRIER NAMEEnter carrier name. Space fill after completename.
+* PRODUCT CODE
+-----------------------------
+1K   -  Kerosene AVI  -  Aviation
+
+Test Oil Co.	8	25
+R-12345	1	x
+0 7 2 0 0 0	9
+0717 2000	A1244	Trucking Co.	C19578	Gas & Oil Co. Rock Island	Macomb	R-14321	11,000
+17	18	30	20	15	28	29	16	22
+Motor Fuel Uniform Schedules
+Schedule “LD” (ENTRY) Record
+Buffer: 256 FIXED LENGTH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+‘O’ -  Original data ‘C’ -  Correction data ‘R’ -  Reversal data ‘N’ -  Negative data
+727 - 271NFILER PETRODEX INDICATORNot used by IDOR. Zero fill.828 - 4720A/NFILER NAMEComplete name of the filer. Space fill after complete name.948 - 514N NLIABILITY DATE
+48 - 49 Year
+
+50 - 51 MonthEnter valid date.
+Enter last 2 digits only.
+Example: Enter Year 2000 as ‘00’.
+01 - 12.1052 - 565AFILLERSpace fill.1157 - 604ACARRIER CODENot used. Space fill.1261 - 666NORIGIN CODENot used. Zero fill.1367 - 726NDESTINATION CODENot used. Zero fill.1473 - 731NPURCHASER PETRODEX INDICATORNot used by IDOR. Zero fill.1574 - 9320A/NPURCHASER NAMEName of the purchaser. Space fill after complete name.
+Schedule “LD” (ENTRY) Record (continued)
+Buffer: 256 FIXED LENGTH
+Field #
+16Position
+94 - 113Length
+20TypeField Description
+PURCHASER LICENSE NUMBERRemarksN94   -   95	TypeEnter purchaser license type.
+N
+
+N A
+96   - 100	Sequence #
+
+101 Code
+102 - 113	Filler‘08’ - for receiver
+Purchaser license number. (Leading zeroes, if 4 digit license number.)
+Zero fill. Space fill.17114 - 1196N NINVOICE DATE
+114 - 115 Year
+
+116 - 117 MonthEnter a valid date. Enter last 2 digits only.
+Example: enter year 2000 as ‘00’.
+01 - 12.N118 - 119 Day01 - 31.18120 - 13112A/NINVOICE NUMBEREnter an invoice number. Required field. No leading zeroes. Space fill at end.19132 - 1376
+NBILL OF LADING DATE
+132 - 133 YearEnter a valid date.N134 - 135 Month01 - 12.N136 - 137 Day01 - 31.20138 - 14710A/NBILL OF LADINGEnter bill of lading or manifest number. No leading zeroes. Space fill at end.21148 - 17730NFILLERNot used by IDOR. Zero fill.22178 - 18710NNET GALLONSInvoiced gallons. Format 9 (9) V9. See instructions on Page 7.23188 - 1881NFILLERZero fill.24189 - 1891ASTORAGE PERMIT INDICATORSpace fill.25190 - 1989APRODUCT CODEEnter 3 character product code.	*If not contained within code table, enterproduct name.26199 - 21012AFILLERSpace fill.27211 - 2111AMEDIA CODEEnter ‘D’ for diskette.28212 - 22615AORIGIN NAMEEnter origin name. Space fill after complete212 - 224 Cityname.225 - 226 State29227 - 24115ADESTINATION NAMEEnter destination name. Space fill after227 - 239 Citycomplete name.240 - 241 State30242 - 25615ACARRIER NAMEEnter carrier name. Space fill after completename.
+* PRODUCT CODE
+-----------------------------
+AVI  -  Aviation 1K   -  Kerosene
+
+25
+Test Oil Co. 	8
+x
+R-12345 	1
+0 72 0 0 0	9
+0723 2000	A4413	ABC Trucking	BL145	Aviation Fuel Co. Carbondale Springfield R-15432	100,000
+17	18	30	20	15	28	29	16	22
+
+Motor Fuel Uniform Schedules
+Schedule “LE” (ENTRY) Record
+Buffer: 256 FIXED LENGTH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+‘O’ -  Original data ‘C’ -  Correction data ‘R’ -  Reversal data ‘N’ -  Negative data
+727 - 271NFILER PETRODEX INDICATORNot used by IDOR. Zero fill.828 - 4720A/NFILER NAMEComplete name of the filer. Space fill after complete name.948 - 514N NLIABILITY DATE
+48 - 49 Year
+
+50 - 51 MonthEnter valid date.
+Enter last 2 digits only.
+Example: Enter Year 2000 as ‘00’.
+01 - 12.1052 - 565AFILLERSpace fill.1157 - 604ACARRIER CODENot used. Space fill.1261 - 666NORIGIN CODENot used. Zero fill.1367 - 726NDESTINATION CODENot used. Zero fill.1473 - 731NSELLER PETRODEX INDICATORNot used by IDOR. Zero fill.1574 - 9320A/NSELLER NAMEName of the seller. Space fill after complete name.
+Schedule “LE” (ENTRY) Record (continued)
+Buffer: 256 FIXED LENGTH
+Field #
+16Position
+94 - 113Length
+20TypeField Description
+SELLER LICENSE NUMBERRemarksN94   -   95	TypeEnter seller license type:
+N
+
+N A
+96   - 100	Sequence #
+
+101 Code
+102 - 113	Filler‘08’ - for receiver
+Seller license number. (Leading zeroes, if 4 digit license number.)
+Zero fill. Space fill.17114 - 1196N NINVOICE DATE
+114 - 115 Year
+
+116 - 117 MonthEnter a valid date. Enter last 2 digits only.
+Example: enter year 2000 as ‘00’.
+01 - 12.N118 - 119 Day01 - 31.18120 - 13112A/NINVOICE NUMBEREnter an invoice number. Required field. No leading zeroes. Space fill at end.19132 - 1376
+NBILL OF LADING DATE
+132 - 133 YearEnter a valid date.N134 - 135 Month01 - 12.N136 - 137 Day01 - 31.20138 - 14710A/NBILL OF LADINGEnter bill of lading or manifest number. No leading zeroes. Space fill at end.21148 - 17730NFILLERNot used by IDOR. Zero fill.22178 - 18710NNET GALLONSInvoiced gallons. Format 9 (9) V9. See instructions on Page 7.23188 - 1881NFILLERZero fill.24189 - 1891AFILLERSpace fill.25190 - 1989APRODUCT CODEEnter 3 character product code.	*If not contained within code table, enterproduct name.26199 - 21012AFILLERSpace fill.27211 - 2111AMEDIA CODEEnter ‘D’ for diskette.28212 - 22615AORIGIN NAMEEnter origin name. Space fill after complete212 - 224 Cityname.225 - 226 State29227 - 24115ADESTINATION NAMEEnter destination name. Space fill after227 - 239 Citycomplete name.240 - 241 State30242 - 25615ACARRIER NAMEEnter carrier name. Space fill after completename.* PRODUCT CODE
+-----------------------------
+1K   -  Kerosene AVI  -  Aviation DYE -  Dyed Diesel
+
+25
+Gas & O
+D-0432	x
+
+
+
+
+
+0718 20003579Transport Co.K2468Test Oil Co. Madison, WI   Rockford	D-0234520,0001718302015	28	29	1622Motor Fuel Uniform Schedules
+Schedule “SA” (ENTRY) Record
+Buffer: 256 FIXED LENGTH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+‘O’ -  Original data ‘C’ -  Correction data ‘R’ -  Reversal data ‘N’ -  Negative data
+
+
+
+
+
+
+
+
+
+
+
+
+
+.
+
+Schedule “SA” (ENTRY) Record (continued)
+Buffer: 256 FIXED LENGTH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+‘1’ - Illinois receipts ‘2’ - Imported
+‘3’ - Produced
+
+26200 - 21011AFILLERSpace fill.27211 - 2111AMEDIA CODEEnter ‘D’ for diskette.28212 - 22615AORIGIN NAME
+212 - 224 City
+225 - 226 StateEnter origin name. Space fill after complete name.29227 - 24115ADESTINATION NAME
+227 - 239 City
+240 - 241 StateEnter destination name. Space fill after complete name.30242 - 25615ACARRIER NAMEEnter carrier name. Space fill after complete name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Motor Fuel Uniform Schedules
+Schedule “SB” (ENTRY) Record
+Buffer: 256 FIXED LENGTH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+‘O’ -  Original data ‘C’ -  Correction data ‘R’ -  Reversal data ‘N’ -  Negative data
+727 - 271NFILER PETRODEX INDICATORNot used by IDOR. Zero fill.828 - 4720A/NFILER NAMEComplete name of the filer. Space fill after complete name.948 - 514N NLIABILITY DATE
+48 - 49 Year
+
+50 - 51 MonthEnter valid date.
+Enter last 2 digits only.
+Example: Enter Year 2000 as ‘00’.
+01 - 12.1052 - 565AFILLERSpace fill.1157 - 604ACARRIER CODENot used. Space fill.1261 - 666NORIGIN CODENot used. Zero fill.1367 - 726NDESTINATION CODENot used. Zero fill.1473 - 731NPURCHASER  PETRODEX INDICATORNot used by IDOR. Zero fill.1574 - 9320A/NPURCHASER NAMEName of the purchaser. Space fill after complete name.
+Schedule “SB” (ENTRY) Record (continued)
+Buffer: 256 FIXED LENGTH
+Field #
+16Position
+94 - 113Length
+20TypeField Description
+PURCHASER LICENSE NUMBERRemarksN N N A94   -   95	Type
+96   - 100	Sequence #
+101 Code
+102 - 113	FillerZero fill. Zero fill. Zero fill. Space fill.17114 - 1196N NINVOICE DATE
+114 - 115 Year
+
+116 - 117 MonthEnter a valid date. Enter last 2 digits only.
+Example: enter year 2000 as ‘00’.
+01 - 12.N118 - 119 Day01 - 31.18120 - 13112A/NINVOICE NUMBEREnter an invoice number. Required field. No leading zeroes. Space fill at end.19132 - 1376
+NBILL OF LADING DATE
+132 - 133 YearEnter a valid date.N134 - 135 Month01 - 12.N136 - 137 Day01 - 31.20138 - 14710A/NBILL OF LADINGEnter bill of lading or manifest number. No leading zeroes. Space fill at end.21148 - 17730NFILLERNot used by IDOR. Zero fill.22178 - 18710NNET GALLONSInvoiced gallons. Format 9 (9) V9. See instructions on Page 7.23188 - 1881NFILLERZero fill.24189 - 1891ASTORAGE PERMIT INDICATORSpace fill.25190 - 21021AFILLERSpace fill.26211 - 2111AMEDIA CODEEnter ‘D’ for diskette.27212 - 22615AORIGIN NAMEEnter origin name. Space fill after complete212 - 224 Cityname.225 - 226 State28227 - 24115ADESTINATION NAMEEnter destination name. Space fill after227 - 239 Citycomplete name.240 - 241 State29242 - 25615ACARRIER NAMEEnter carrier name. Space fill after completename.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Motor Fuel Uniform Schedules
+Schedule “SC” (ENTRY) Record
+Buffer: 256 FIXED LENGTH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+‘O’ -  Original data ‘C’ -  Correction data ‘R’ -  Reversal data ‘N’ -  Negative data
+727 - 271NFILER PETRODEX INDICATORNot used by IDOR. Zero fill.828 - 4720A/NFILER NAMEComplete name of the filer. Space fill after complete name.948 - 514N NLIABILITY DATE
+48 - 49 Year
+
+50 - 51 MonthEnter valid date.
+Enter last 2 digits only.
+Example: Enter Year 2000 as ‘00’.
+01 - 12.1052 - 565AFILLERSpace fill.1157 - 604ACARRIER CODENot used. space fill.1261 - 666NORIGIN CODENot used. Zero fill.1367 - 726NDESTINATION CODENot used. Zero fill.1473 - 731NPURCHASER  PETRODEX INDICATORNot used by IDOR. Zero fill.1574 - 9320A/NPURCHASER NAMEName of the purchaser. Space fill after complete name.
+1694 - 11320
+
+N N N APURCHASER LICENSE NUMBER
+94   -   95	Type
+96   - 100	Sequence #
+101 Code
+102 - 113	Filler
+
+Zero fill. Zero fill. Zero fill. Space fill.17114 - 1196N NINVOICE DATE
+114 - 115 Year
+
+116 - 117 MonthEnter a valid date. Enter last 2 digits only.
+Example: enter year 2000 as ‘00’.
+01 - 12.N118 - 119 Day01 - 31.18120 - 13112A/NINVOICE NUMBEREnter an invoice number. Required field. No leading zeroes. Space fill at end.19132 - 1376
+NBILL OF LADING DATE
+132 - 133 YearEnter a valid date.N134 - 135 Month01 - 12.N136 - 137 Day01 - 31.20138 - 14710A/NBILL OF LADINGEnter bill of lading or manifest number. No leading zeroes. Space fill at end.21148 - 17730NFILLERNot used by IDOR. Zero fill.22178 - 18710NNET GALLONSInvoiced gallons. Format 9 (9) V9. See instructions on Page 7.23188 - 1881NFILLERZero fill.24189 - 1891ASTORAGE PERMIT INDICATORSpace fill.25190 - 20819AFILLERSpace fill.26209 - 2102AEXPORT STATEEnter valid postal abbreviation for the exportstate.27211 - 2111AMEDIA CODEEnter ‘D’ for diskette.28212 - 22615AORIGIN NAMEEnter origin name. Space fill after complete212 - 224 Cityname.225 - 226 State29227 - 24115ADESTINATION NAMEEnter destination name. Space fill after227 - 239 Citycomplete name.240 - 241 State30242 - 25615ACARRIER NAMEEnter carrier name. Space fill after completename.
+23
+Test Oil Co.	8
+D-02345	1	x
+0 7 2 0 0 0	9
+0718 2000	3579	AB Carrier	K2468	Gas & Oil Co.	Peoria	Morton	D-04321	20,000
+
+17	18	28	20	15	26
+
+27	16	22
+
+Motor Fuel Uniform Schedules
+Schedule “SD” (ENTRY) Record
+Buffer: 256 FIXED LENGTH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+‘O’ -  Original data ‘C’ -  Correction data ‘R’ -  Reversal data ‘N’ -  Negative data
+727 - 271NFILER PETRODEX INDICATORNot used by IDOR. Zero fill.828 - 4720A/NFILER NAMEComplete name of the filer. Space fill after complete name.948 - 514N NLIABILITY DATE
+48 - 49 Year
+
+50 - 51 MonthEnter valid date.
+Enter last 2 digits only.
+Example: Enter Year 2000 as ‘00’.
+01 - 12.1052 - 565AFILLERSpace fill.1157 - 604ACARRIER CODENot used. Space fill.1261 - 666NORIGIN CODENot used. Zero fill.1367 - 726NDESTINATION CODENot used. Zero fill.1473 - 731NPURCHASER  PETRODEX INDICATORNot used by IDOR. Zero fill.1574 - 9320A/NPURCHASER NAMEName of the purchaser. Space fill after complete name.
+Schedule “SD” (ENTRY) Record (continued)
+Buffer: 256 FIXED LENGTH
+
+
+
+
+‘01’ - for distributor ‘02’ - for supplier ‘08’ - for receiver
+
+N
+
+N A
+96   - 100	Sequence #
+
+101 Code
+102 - 113	Filler(If ‘08’, must be same as Field 01) Purchaser license number. (Leading zeroes, if 4 digit license number.)
+Zero fill. Space fill.17114 - 1196N NINVOICE DATE
+114 - 115 Year
+
+116 - 117 MonthEnter a valid date. Enter last 2 digits only.
+Example: enter year 2000 as ‘00’.
+01 - 12.N118 - 119 Day01 - 31.18120 - 13112A/NINVOICE NUMBEREnter an invoice number. Required field. No leading zeroes. Space fill at end.19132 - 1376
+NBILL OF LADING DATE
+132 - 133 YearEnter a valid date.N134 - 135 Month01 - 12.N136 - 137 Day01 - 31.20138 - 14710A/NBILL OF LADINGEnter bill of lading or manifest number. No leading zeroes. Space fill at end.21148 - 17730NFILLERNot used by IDOR. Zero fill.22178 - 18710NNET GALLONSInvoiced gallons. Format 9 (9) V9. See instructions on Page 7.23188 - 1881NTAX TYPEEnter tax type.
+1 - MFT-Free only
+2 - UST-/EIF-Free only
+3 - Both MFT- and UST-/EIF-Free24189 - 21022AFILLERSpace fill.25211 - 2111AMEDIA CODEEnter ‘D’ for diskette.26212 - 22615AORIGIN NAMEEnter origin name. Space fill after complete212 - 224 Cityname.225 - 226 State27227 - 24115ADESTINATION NAMEEnter destination name. Space fill after227 - 239 Citycomplete name.240 - 241 State28242 - 25615ACARRIER NAMEEnter carrier name. Space fill after completename.
+Gas & Oil Co.	8
+D-04321	1
+0 7 2 0 0 0	9
+
+23	25
+
+
+x
+x
+
+
+
+
+
+0710 20005134Fuel Carrier Co.	K5134XYZ Oil Co.Rock Island Metropolis S-023168,500171830	201528	29	1622Motor Fuel Uniform Schedules
+Schedule “SE” (ENTRY) Record
+Buffer: 256 FIXED LENGTH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+‘O’ -  Original data ‘C’ -  Correction data ‘R’ -  Reversal data ‘N’ -  Negative data
+727 - 271NFILER PETRODEX INDICATORNot used by IDOR. Zero fill.828 - 4720A/NFILER NAMEComplete name of the filer. Space fill after complete name.948 - 514N NLIABILITY DATE
+48 - 49 Year
+
+50 - 51 MonthEnter valid date.
+Enter last 2 digits only.
+Example: Enter Year 2000 as ‘00’.
+01 - 12.1052 - 565AFILLERSpace fill.1157 - 604ACARRIER CODENot used. Space fill.1261 - 666NORIGIN CODENot used. Zero fill.1367 - 726NDESTINATION CODENot used. Zero fill.1473 - 731NSELLER PETRODEX INDICATORNot used by IDOR. Zero fill.1574 - 9320A/NSELLER NAMEName of the seller. Space fill after complete name.
+Schedule “SE” (ENTRY) Record (continued)
+Buffer: 256 FIXED LENGTH
+Field #
+16Position
+94 - 113Length
+20TypeField Description
+SELLER LICENSE NUMBERRemarksN94   -   95	TypeEnter seller license type: ‘01’ - for distributor
+
+N N
+
+
+
+96   - 100	Sequence #
+
+101	Code‘02’ - for supplier ‘08’ - for receiver
+(If ‘08’, must be same as Field 01) Seller license number. (Leading zeroes, if 4 digit license number.)
+Zero fill.A102 - 113	FillerSpace fill.17114 - 1196N NINVOICE DATE
+114 - 115 Year
+
+116 - 117 MonthEnter a valid date. Enter last 2 digits only.
+Example: enter year 2000 as ‘00’.
+01 - 12.N118 - 119 Day01 - 31.18120 - 13112A/NINVOICE NUMBEREnter an invoice number. Required field. No leading zeroes. Space fill at end.19132 - 1376
+NBILL OF LADING DATE
+132 - 133 YearEnter a valid date.N134 - 135 Month01 - 12.N136 - 137 Day01 - 31.20138 - 14710A/NBILL OF LADINGEnter bill of lading or manifest number. No leading zeroes. Space fill at end.21148 - 17730NFILLERNot used by IDOR. Zero fill.22178 - 18710NNET GALLONSInvoiced gallons. Format 9 (9) V9. See instructions on Page 7.23188 - 1881NTAX TYPEEnter tax type.
+1 - MFT-Paid only
+2 - UST-/EIF-Paid only
+3 - Both MFT- and UST-/EIF-Paid24189 - 1891ASTORAGE PERMIT INDICATORSpace fill.25190 - 1989APRODUCT CODEEnter 3 character product code.	*If not contained within code table, enterproduct name.26199 - 21012AFILLERSpace fill.27211 - 2111AMEDIA CODEEnter ‘D’ for diskette.28212 - 22615AORIGIN NAMEEnter origin name. Space fill after complete212 - 224 Cityname.225 - 226 State29227 - 24115ADESTINATION NAMEEnter destination name. Space fill after227 - 239 Citycomplete name.240 - 241 State30242 - 25615ACARRIER NAMEEnter carrier name. Space fill after completename.
+* PRODUCT CODE
+-----------------------------
+SPF -  Special fuel (excluding dyed diesel) 1K   -  Kerosene
+
+Total “S” (SCHEDULE TOTAL) Record
+Buffer: 256 FIXED LENGTH
+Field #
+1Position
+1 - 17Length
+17TypeField Description
+FILER LICENSERemarksN
+
+
+N N1 - 2  Type
+
+
+
+
+3 - 7  Sequence #
+
+8	CodeEnter filer license type.
+‘01’ - for distributor ‘02’ - for supplier ‘08’ - for receiver
+Filer license number. (Leading zeroes, if 4 digit license number.)
+Zero fill.A9 - 17 FillerSpace fill.218 - 203AIDOR SCHEDULE TYPEEnter schedule type being totalled.321 - 222AFILER PERMIT KINDNot used by IDOR. Space fill.423 - 242NFILER LICENSE YEARNot used by IDOR. Zero fill.525 - 251ARECORD TYPEEntry type. Enter an ‘S’ for schedule type total record.626 - 261AFILING INDICATORTransaction type indicator.
+‘O’ - Original data727 - 271NFILER PETRODEX INDICATORNot used by IDOR. Zero fill.828 - 4720A/NFILER NAMEComplete name of the filer. Space fill after complete name.948 - 514N NLIABILITY DATE
+48 - 49 Year
+
+50 - 51 MonthEnter valid date.
+Enter last 2 digits only.
+Example: Enter Year 2000 as ‘00’.
+01 - 12.1052 - 565AFILLERSpace fill.1157 - 7115NFILLERNot used by IDOR. Zero fill.1272 - 8615NFILLERNot used by IDOR. Zero fill.1387 - 10115NFILLERNot used by IDOR. Zero fill.14102 - 11615NSCHEDULE NET GALLONSTotal invoiced gallons from the specified schedule type. Format 9 (14) V9. See instructions on Page 7.15117 - 12610AFILLERSpace fill.16127 - 13610NTOTAL ORIGINAL ENTRIESTotal of all original entry records for this schedule type.17137 - 14610NTOTAL CORRECTION ENTRIESTotal of all correction entry records for this schedule type.18147 - 15610NTOTAL REVERSAL ENTRIESTotal of all reversal entry records for this schedule type.19157 - 16610NTOTAL NEGATIVE ENTRIESTotal of all negative entry records for this schedule type.20167 - 25690AFILLERSpace fill.
+Total “V” (LICENSE TOTAL) Record
+
+
+
+Buffer: 256 FIXED LENGTH
+
+Field #
+1Position
+1 - 17Length
+17TypeField Description
+FILER LICENSERemarksN
+
+
+N N1 - 2  Type
+
+
+
+
+3 - 7  Sequence #
+
+8	CodeEnter filer license type.
+‘01’ - for distributor ‘02’ - for supplier ‘08’ - for receiver
+Filer license number. (Leading zeroes, if 4 digit license number.)
+Zero fill.A9 - 17 FillerSpace fill.218 - 203AIDOR SCHEDULE TYPESpace fill.321 - 222AFILER PERMIT KINDNot used by IDOR. Space fill.423 - 242NFILER LICENSE YEARNot used by IDOR. Zero fill.525 - 251ARECORD TYPEEntry type. Enter a ‘V’ for license total record.626 - 261AFILING INDICATORTransaction type indicator.
+‘O’ - Original data727 - 271NFILER PETRODEX INDICATORNot used by IDOR. Zero fill.828 - 4720A/NFILER NAMEComplete name of the filer. Space fill after complete name.948 - 514N NLIABILITY DATE
+48 - 49 Year
+
+50 - 51 MonthEnter valid date.
+Enter last 2 digits only.
+Example: Enter Year 2000 as ‘00’.
+01 - 12.1052 - 565AFILLERSpace fill.1157 - 7115NFILLERNot used by IDOR. Zero fill.1272 - 8615NFILLERNot used by IDOR. Zero fill.1387 - 10115NFILLERNot used by IDOR. Zero fill.14102 - 11615NLICENSE NET GALLONSTotal invoiced gallons from all schedules for this license. Format 9 (14) V9. See instructions on Page 7.15117 - 12610AFILLERSpace fill.16127 - 13610NTOTAL ORIGINAL ENTRIESTotal of all original entry records for this license.17137 - 14610NTOTAL CORRECTION ENTRIESTotal of all correction entry records for this license.18147 - 15610NTOTAL REVERSAL ENTRIESTotal of all reversal entry records for this license.19157 - 16610NTOTAL NEGATIVE ENTRIESTotal of all negative entry records for this license.20167 - 25690AFILLERSpace fill.
+Total “Z” (FILE TOTAL) Record
+
+
+
+Buffer: 256 FIXED LENGTH
+
+Field #
+1Position
+1 - 17Length
+17TypeField Description
+FILER LICENSERemarksN
+A1 - 8   Filer License
+9 - 17 FillerZero fill.
+Space fill.218 - 203AIDOR SCHEDULE TYPESpace fill.321 - 222AFILER PERMIT KINDSpace fill.423 - 242NFILER LICENSE YEARZero fill.525 - 251ARECORD TYPEEntry type. Enter a ‘Z’ for file total record.626 - 261AFILING INDICATORTransaction type indicator.
+‘O’ - Original data727 - 271NFILER PETRODEX INDICATORZero fill.828 - 4720A/NFILER NAMEComplete name of the filer. Space fill after complete name.948 - 514N NLIABILITY DATE
+48 - 49 Year
+
+50 - 51 MonthEnter valid date.
+Enter last 2 digits only.
+Example: Enter Year 2000 as ‘00’.
+01 - 12.1052 - 565AFILLERSpace fill.1157 - 7115NFILLERZero fill.1272 - 8615NFILLERNot used by IDOR. Zero fill.1387 - 10115NFILLERNot used by IDOR. Zero fill.14102 - 11615NFILE NET GALLONSTotal invoiced gallons from all schedules on the file. Format 9(14) V9. See instructions on Page 7.15117 - 12610AFILLERSpace fill.16127 - 13610NTOTAL ORIGINAL ENTRIESTotal of all original entry records for this file.17137 - 14610NTOTAL CORRECTION ENTRIESTotal of all correction entry records for this file.18147 - 15610NTOTAL REVERSAL ENTRIESTotal of all reversal entry records for this file.19157 - 16610NTOTAL NEGATIVE ENTRIESTotal of all negative entry records for this file.20167 - 25690AFILLERSpace fill.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PRINTED ON RECYCLED PAPER
+BY THE AUTHORITY OF THE STATE OF ILLINOIS RMFT-142 (500 copies - 2/09 — PO Number 2090588)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
